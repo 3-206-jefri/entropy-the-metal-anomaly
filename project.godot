@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Entropy The Metal Anomaly"
+run/main_scene="uid://d3tqqjkbk1s32"
+config/features=PackedStringArray("4.5", "Double Precision", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+scene_manager="*res://autoload/scene_manager.gd"
+
+[input]
+
+player_up={
+"deadzone": 0.2,
+"events": []
+}
+player_down={
+"deadzone": 0.2,
+"events": []
+}
+player_left={
+"deadzone": 0.2,
+"events": []
+}
+player_right={
+"deadzone": 0.2,
+"events": []
+}
