@@ -2,13 +2,11 @@ extends Node
 class_name Movement
 
 @export var speed := 200.0
+@export var gravity := 900.0
 
 func process_movement(body: CharacterBody2D, dir: Vector2, delta: float):
-	var v := Vector2.ZERO
+	body.velocity.x = dir.x * speed
 
-	v = dir.normalized() * speed
+	body.velocity.y += gravity * delta
 
-	# v.y += 900 * delta
-
-	body.velocity = v
 	body.move_and_slide()

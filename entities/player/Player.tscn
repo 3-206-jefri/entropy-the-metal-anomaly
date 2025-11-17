@@ -95,7 +95,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Running",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_453mm"]
@@ -109,6 +109,7 @@ script = ExtResource("1_mab2k")
 position = Vector2(278, 147)
 sprite_frames = SubResource("SpriteFrames_j531f")
 animation = &"Running"
+frame = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(277, 175)
