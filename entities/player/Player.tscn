@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://bet7tmucb5pbb"]
+[gd_scene load_steps=125 format=3 uid="uid://bet7tmucb5pbb"]
 
 [ext_resource type="Script" uid="uid://dweidhwsxys1t" path="res://entities/player/player.gd" id="1_mab2k"]
 [ext_resource type="Texture2D" uid="uid://di3gjmad485q5" path="res://assets/sprites/Player/Jumping.png" id="2_4pwj0"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4ujck5tois8" path="res://assets/sprites/Player/Landing with Impact.png" id="9_j531f"]
 [ext_resource type="Texture2D" uid="uid://d4eo44spgqhgb" path="res://assets/sprites/Player/Stop_Running.png" id="10_2a181"]
 [ext_resource type="Texture2D" uid="uid://gfruidhr5p2c" path="res://assets/sprites/Player/Jump witn Strike.png" id="14_npcl8"]
+[ext_resource type="Script" uid="uid://ya5d0w1la0hw" path="res://entities/player/stats.gd" id="18_j531f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ttxfl"]
 atlas = ExtResource("2_mq27t")
@@ -826,8 +827,7 @@ texture_filter = 1
 position = Vector2(278, 147)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_j531f")
-animation = &"Roll"
-frame_progress = 0.28736533333333414
+animation = &"Landing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(278, 162)
@@ -847,3 +847,6 @@ position = Vector2(276, 148)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("18_j531f")
