@@ -833,15 +833,6 @@ animation = &"Landing"
 position = Vector2(278, 162)
 shape = SubResource("CapsuleShape2D_453mm")
 
-[node name="Movement" type="Node" parent="."]
-script = ExtResource("2_453mm")
-
-[node name="Input" type="Node" parent="."]
-script = ExtResource("3_l3c03")
-
-[node name="Anim" type="Node" parent="."]
-script = ExtResource("4_eaotn")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(276, 148)
 zoom = Vector2(3, 3)
@@ -850,3 +841,12 @@ rotation_smoothing_enabled = true
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("18_j531f")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("2_453mm")
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("3_l3c03")
+
+[node name="Anim" type="Node" parent="."]
+script = ExtResource("4_eaotn")
