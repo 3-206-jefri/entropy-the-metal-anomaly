@@ -52,6 +52,7 @@ func _state_wake():
 
 func _state_run(delta):
 	movement.move_toward_target(delta)
+	body.move_and_slide()
 
 	if detection.target and \
 		pivot.global_position.distance_to(detection.target.global_position) <= attack_range:
