@@ -8,7 +8,7 @@ class_name CyborgStats
 @export var double_jump_force: float = -330.0
 
 # ===== Animation Thresholds =====
-@export var fall_threshold: float = 0.0
+@export var fall_threshold: float = 2000.0
 @export var jump_threshold: float = -10.0
 @export var run_threshold: float = 0.1
 
