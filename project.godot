@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Entropy The Metal Anomaly"
 run/main_scene="uid://d3tqqjkbk1s32"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Double Precision", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 scene_manager="*res://autoload/scene_manager.gd"
 AudioManager="*res://autoload/audio_manager.gd"
 InLabMusic="*res://scenes/music/in_lab.tscn"
+entropy_system="*res://autoload/entropy.gd"
+
+[global_group]
+
+enemies="group for enemies"
 
 [input]
 
