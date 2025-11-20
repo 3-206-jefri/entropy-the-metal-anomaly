@@ -347,7 +347,7 @@ animations = [{
 "speed": 9.0
 }]
 
-[node name="Cyborg" type="CharacterBody2D"]
+[node name="Cyborg" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-1, 1)
 slide_on_ceiling = false
 script = ExtResource("1_h6dt7")
