@@ -44,4 +44,3 @@ func process_movement(
 		
 	# Pass can_double_jump to anim for animation logic
 	anim.set_can_double_jump(can_double_jump)
-

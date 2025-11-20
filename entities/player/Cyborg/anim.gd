@@ -33,7 +33,6 @@ func update_animation(
 			sprite.play("Idle")
 	else:
 		# Di udara
-		# Gunakan jump_threshold untuk menentukan kapan play Jump
 		if vel.y < stats.jump_threshold:
 			# Lagi naik
 			if can_double_jump:
@@ -42,8 +41,11 @@ func update_animation(
 			else:
 				# Setelah double jump
 				sprite.play("DoubleJump")
-		# Gunakan fall_threshold untuk menentukan kapan play Fall
-		elif vel.y > stats.fall_threshold:
-			# Lagi turun dengan kecepatan tinggi
-			sprite.play("Fall")
-
+		else:
+			# Lagi jatuh (velocity.y > 0)
+			if dir.x == 0:
+				# Jatuh tanpa gerakan horizontal → Fall
+				sprite.play("Fall")
+			else:
+				# Jatuh dengan gerakan horizontal → Jump
+				sprite.play("Jump")

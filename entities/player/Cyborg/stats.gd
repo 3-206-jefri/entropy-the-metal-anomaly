@@ -11,4 +11,3 @@ class_name CyborgStats
 @export var fall_threshold: float = 2000.0
 @export var jump_threshold: float = -10.0
 @export var run_threshold: float = 0.1
-
