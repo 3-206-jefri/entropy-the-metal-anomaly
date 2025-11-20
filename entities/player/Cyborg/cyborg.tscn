@@ -1,14 +1,18 @@
-[gd_scene load_steps=49 format=3 uid="uid://dra0cogy3bnme"]
+[gd_scene load_steps=57 format=3 uid="uid://dra0cogy3bnme"]
 
 [ext_resource type="Script" uid="uid://cbdvnaof2msm" path="res://entities/player/Cyborg/cyborg.gd" id="1_h6dt7"]
 [ext_resource type="Texture2D" uid="uid://cjauxlrp8ekyl" path="res://assets/sprites/3 Cyborg/No Weapon/Cyborg_idle.png" id="2_5yirn"]
 [ext_resource type="Texture2D" uid="uid://b5w2qpun2mw6f" path="res://assets/sprites/3 Cyborg/No Weapon/Cyborg_climb.png" id="2_xyaby"]
 [ext_resource type="Texture2D" uid="uid://dp36101ship0i" path="res://assets/sprites/3 Cyborg/No Weapon/Cyborg_doublejump.png" id="3_hbmkm"]
+[ext_resource type="Texture2D" uid="uid://bhprtfk4lnu3e" path="res://assets/sprites/3 Cyborg/No Weapon/Fall.png" id="4_eom1p"]
 [ext_resource type="Texture2D" uid="uid://dybjy4mw2s0wa" path="res://assets/sprites/3 Cyborg/No Weapon/Cyborg_jump.png" id="5_bnnkx"]
 [ext_resource type="Texture2D" uid="uid://bpxu2itsfk40y" path="res://assets/sprites/3 Cyborg/With Laserbeam/idle-2-laserbeam.png" id="5_lelfy"]
 [ext_resource type="Texture2D" uid="uid://cww2w1hd12iab" path="res://assets/sprites/3 Cyborg/No Weapon/Cyborg_run.png" id="6_lelfy"]
 [ext_resource type="Texture2D" uid="uid://d0slicp67ke42" path="res://assets/sprites/3 Cyborg/With Laserbeam/run-2-laserbeam.png" id="7_hbmkm"]
-[ext_resource type="Script" uid="uid://ya5d0w1la0hw" path="res://entities/player/stats.gd" id="9_lelfy"]
+[ext_resource type="Script" uid="uid://beyx7a4oj3hbw" path="res://entities/player/Cyborg/stats.gd" id="9_lelfy"]
+[ext_resource type="Script" uid="uid://cmajpjrrndhl7" path="res://entities/player/Cyborg/movement.gd" id="10_movement"]
+[ext_resource type="Script" uid="uid://c6mmwqymdige5" path="res://entities/player/Cyborg/input.gd" id="11_input"]
+[ext_resource type="Script" uid="uid://bumes62ha2y80" path="res://entities/player/Cyborg/anim.gd" id="12_anim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xyaby"]
 size = Vector2(20, 40)
@@ -60,6 +64,22 @@ region = Rect2(194, 0, 30, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmh8b"]
 atlas = ExtResource("3_hbmkm")
 region = Rect2(242, 0, 23, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjmcp"]
+atlas = ExtResource("4_eom1p")
+region = Rect2(5, 0, 19, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0loc"]
+atlas = ExtResource("4_eom1p")
+region = Rect2(53, 0, 19, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcj66"]
+atlas = ExtResource("4_eom1p")
+region = Rect2(101, 0, 19, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrrt3"]
+atlas = ExtResource("4_eom1p")
+region = Rect2(149, 0, 19, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cn2o"]
 atlas = ExtResource("2_5yirn")
@@ -211,6 +231,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tjmcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0loc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcj66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrrt3")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_2cn2o")
 }, {
 "duration": 1.0,
@@ -324,8 +361,17 @@ texture_filter = 1
 position = Vector2(0, -6)
 scale = Vector2(1.33236, 1.25)
 sprite_frames = SubResource("SpriteFrames_ut818")
-animation = &"Run2Laserbeam"
-frame_progress = 0.972172
+animation = &"Fall"
+frame_progress = 0.113813
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("9_lelfy")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("10_movement")
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("11_input")
+
+[node name="Anim" type="Node" parent="."]
+script = ExtResource("12_anim")
