@@ -83,19 +83,19 @@ region = Rect2(149, 0, 19, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2cn2o"]
 atlas = ExtResource("2_5yirn")
-region = Rect2(0, 0, 24, 48)
+region = Rect2(3, 0, 19, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0vxe"]
 atlas = ExtResource("2_5yirn")
-region = Rect2(48, 0, 24, 48)
+region = Rect2(51, 0, 19, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y64ox"]
 atlas = ExtResource("2_5yirn")
-region = Rect2(96, 0, 24, 48)
+region = Rect2(98, 0, 21, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ri8mo"]
 atlas = ExtResource("2_5yirn")
-region = Rect2(144, 0, 24, 48)
+region = Rect2(146, 0, 21, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxb62"]
 atlas = ExtResource("5_lelfy")
@@ -361,8 +361,8 @@ texture_filter = 1
 position = Vector2(0, -6)
 scale = Vector2(1.33236, 1.25)
 sprite_frames = SubResource("SpriteFrames_ut818")
-animation = &"Fall"
-frame_progress = 0.113813
+animation = &"Idle"
+frame_progress = 0.696294
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("9_lelfy")
