@@ -1,5 +1,5 @@
 extends Node
-class_name StateRunBK
+class_name StateRunBE
 
 var ai
 

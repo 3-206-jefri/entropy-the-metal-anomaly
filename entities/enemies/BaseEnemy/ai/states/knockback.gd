@@ -1,5 +1,5 @@
 extends Node
-class_name StateKnockbackBK
+class_name StateKnockbackBE
 
 var ai
 var timer := 0.15

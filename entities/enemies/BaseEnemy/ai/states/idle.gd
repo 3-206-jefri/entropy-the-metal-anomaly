@@ -1,5 +1,5 @@
 extends Node
-class_name StateIdleBK
+class_name StateIdleBE
 var ai
 
 func _init(ai_ref):

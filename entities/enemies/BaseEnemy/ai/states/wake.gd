@@ -1,5 +1,6 @@
 extends Node
-class_name StateIdleBK
+class_name StateWakeBE
+
 var ai
 
 func _init(ai_ref):
@@ -9,8 +10,8 @@ func enter():
 	ai.anim.play_wake()
 
 func update(delta):
-	if ai.player_in_aggro:
-		ai.change_state("wake")
+	if ai.anim.is_finished():
+		ai.change_state("run")
 
 func exit():
 	pass

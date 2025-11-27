@@ -1,5 +1,5 @@
 extends Node
-class_name StateWake
+class_name StateWakeBK
 
 var ai
 
