@@ -1,5 +1,5 @@
 extends Node
-class_name BaseEnemyStats
+class_name BarrelKnightStats
 
 @export var max_hp: float = 100.0
 @export var attack: float = 6.0

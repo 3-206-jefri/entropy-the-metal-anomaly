@@ -1,5 +1,5 @@
 extends Node
-class_name BaseEnemyAnim
+class_name DroidZapperAnim
 
 @onready var sprite: AnimatedSprite2D = get_parent().get_node("Marker2D/AnimatedSprite2D")
 
