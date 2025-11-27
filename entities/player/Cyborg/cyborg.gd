@@ -9,4 +9,4 @@ func _physics_process(delta: float) -> void:
 
 	movement.process_movement(self, dir, input, anim, delta)
 
-	anim.update_animation(dir, velocity, self, input.is_jump_pressed(), delta)
+	anim.update_animation(dir, velocity, self, input.is_jump_pressed(), input.is_fire_pressed(), delta)

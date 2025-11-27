@@ -2,6 +2,7 @@ extends Node
 class_name CyborgAnimation
 
 @onready var sprite: AnimatedSprite2D = get_parent().get_node("AnimatedSprite2D")
+@onready var fireEf: AnimatedSprite2D = get_parent().get_node("FireEf")
 
 var can_double_jump = false
 
@@ -13,6 +14,7 @@ func update_animation(
 	vel: Vector2,
 	body: CharacterBody2D,
 	jump_pressed: bool,
+	fire_pressed: bool,
 	delta: float
 ) -> void:
 	var stats: CyborgStats = body.get_node("Stats")
@@ -24,20 +26,29 @@ func update_animation(
 	elif dir.x > 0:
 		sprite.flip_h = false
 
+	# ====== LOGIKA FIRING ======
+	if fire_pressed:
+		# Saat firing, jalankan animasi Ef1 dari fireEf dan FiringHorLaserbeam dari sprite
+		# Arah firing mengikuti arah direksi player (kanan atau kiri)
+		fireEf.flip_h = sprite.flip_h
+		fireEf.play("Ef1")
+		sprite.play("FiringHorLaserbeam")
+		return
+
 	# ====== LOGIKA ANIMASI ======
 	if on_ground:
 		# Gunakan run_threshold untuk menentukan Run vs Idle
 		if abs(dir.x) > stats.run_threshold:
-			sprite.play("Run")
+			sprite.play("Run2Laserbeam")
 		else:
-			sprite.play("Idle")
+			sprite.play("Idle2Laserbeam")
 	else:
 		# Di udara
 		if vel.y < stats.jump_threshold:
 			# Lagi naik
 			if can_double_jump:
 				# Loncat pertama
-				sprite.play("Jump")
+				sprite.play("Jump2Laserbeam")
 			else:
 				# Setelah double jump
 				sprite.play("DoubleJump")
@@ -48,4 +59,4 @@ func update_animation(
 				sprite.play("Fall")
 			else:
 				# Jatuh dengan gerakan horizontal → Jump
-				sprite.play("Jump")
+				sprite.play("Jump2Laserbeam")
